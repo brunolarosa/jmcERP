@@ -1,0 +1,44 @@
+JuniorERPDashboardBundle_homepage:
+    pattern:  /
+    defaults: { _controller: 'JuniorERPDashboardBundle:Client:index' }
+    
+# Route Admin
+JuniorERPDashboardBundle_admin_index:
+    pattern: /admin
+    defaults: { _controller: 'JuniorERPDashboardBundle:Admin:index' }
+ 
+JuniorERPDashboardBundle_admin_utilisateur_index:
+    pattern: /admin/utilisateur
+    defaults: { _controller: 'JuniorERPDashboardBundle:Admin:indexUtilisateur' }
+ 
+JuniorERPDashboardBundle_admin_etude_index:
+    pattern: /admin/etude
+    defaults: { _controller: 'JuniorERPDashboardBundle:Admin:indexEtude' }
+   
+JuniorERPDashboardBundle_admin_etude_domaine_ajouter:
+    pattern: /admin/etude/domaine/ajouter
+    defaults: { _controller: 'JuniorERPDashboardBundle:Admin:ajouterDomaineEtude' }
+
+# Route Client
+JuniorERPDashboardBundle_client_index:
+    pattern: /client
+    defaults: { _controller: 'JuniorERPDashboardBundle:Client:index' }
+    
+JuniorERPDashboardBundle_client_ajouter:
+    pattern: /client/ajouter
+    defaults: { _controller: 'JuniorERPDashboardBundle:Client:ajouter' }
+
+# Route Etude
+JuniorERPDashboardBundle_etude_index:
+    pattern: /etude
+    defaults: { _controller: 'JuniorERPDashboardBundle:Etude:index' }
+
+JuniorERPDashboardBundle_etude_ajouter:
+    pattern: /etude/ajouter
+    defaults: { _controller: 'JuniorERPDashboardBundle:Etude:ajouter' }
+
+JuniorERPDashboardBundle_etude_voir:
+    pattern: /etude/{id}
+    defaults: { _controller: 'JuniorERPDashboardBundle:Etude:voir' }
+    requirements:
+        id:  \d

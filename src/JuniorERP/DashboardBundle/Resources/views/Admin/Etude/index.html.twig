@@ -1,0 +1,60 @@
+{# src/JuniorDashboard/GestionAdminBundle/Resources/views/Admin/utilisateurs.html.twig #}
+
+{% extends "JuniorERPDashboardBundle:Admin:layout.html.twig" %}
+
+{% block sidebar_list %}
+	<li><a href="{{ path('JuniorERPDashboardBundle_admin_index') }}"><span class="nav-icon dboard-icon"></span> Home</a></li>
+	<li><a href="{{ path('JuniorERPDashboardBundle_admin_utilisateur_index') }}"><span class="nav-icon typo-icon"></span> Utilisateurs</a></li>
+	<li><a href="{{ path('JuniorERPDashboardBundle_admin_etude_index') }}" class="active"><span class="nav-icon typo-icon"></span> Etudes <span class="active-nidicator">&nbsp;</span></a></li>
+	
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+	<div class="container_12">
+		<div class="grid_6">
+			<div class="widget-panel">
+				<div class="widget-top">
+					<h4>Provenances</h4>
+					<a href="{{ path('JuniorERPDashboardBundle_admin_index') }}"><span class="placeholder collapse"></span></a>
+				</div>
+				<div class="widget-content module">
+					<div class="content-block tbl-default">
+						<table>
+							<tbody>
+								{% for provenance in provenances %}
+								<tr>
+									<td>{{ provenance.nom }}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="widget-panel">
+				<div class="widget-top">
+					<h4>Domaines d'action</h4>
+					<a href="{{ path('JuniorERPDashboardBundle_admin_etude_domaine_ajouter') }}"><span class="placeholder collapse"></span></a>
+				</div>
+				<div class="widget-content module">
+					<div class="content-block tbl-default">
+						<table>
+							<tbody>
+								{% for domaine in domaines %}
+								<tr>
+									<td>{{ domaine.nom }}</td>
+									<td>{{ domaine.reference }}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

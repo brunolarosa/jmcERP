@@ -1,0 +1,48 @@
+<form method="post" {{ form_enctype(form) }} action="{{ path('JuniorDashboardClientsBundle_ajouter') }}" class="leftLabel">
+						
+	<ul>
+		<li>
+			{{ form_label(form.nom,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.nom) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    		<div class ="fieldwrap">
+				{{ form_widget(form.nom, { 'attr': {'class': 'large texttips'}} ) }}
+			</div>
+					
+		</li>
+		<li>
+			{{ form_label(form.email,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.email) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    		<div class ="fieldwrap">
+				{{ form_widget(form.email, { 'attr': {'class': 'large texttips'}} ) }}
+			</div>
+					
+		</li>
+		<li>
+			{{ form_label(form.portable,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.portable) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    		<div class ="fieldwrap">
+				{{ form_widget(form.portable, { 'attr': {'class': 'large texttips'}} ) }}
+			</div>
+					
+		</li>
+	</ul>
+	<li class="buttons bottom-round noboder">
+		<div class ="fieldwrap">
+			<input name="" type="submit" value="Valider" class="submit-button">
+			<input name="" value="Reset" type="reset" class="submit-button">
+		</div>
+	</li>
+	{{ form_rest(form) }}
+</form>

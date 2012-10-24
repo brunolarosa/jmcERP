@@ -1,0 +1,60 @@
+
+<form method="post" {{ form_enctype(form) }} action="{{ path('JuniorERPDashboardBundle_client_ajouter') }}" class="leftLabel">
+						
+	<ul>
+		<li>
+			{{ form_label(form.nom,null, { 'attr': {'class': 'fldTitle'}}) }}
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.nom) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    							
+			<div class ="fieldwrap">
+				{{ form_widget(form.nom, { 'attr': {'class': 'large texttips'}} ) }}
+			</div>
+		</li>
+		<li>
+			{{ form_label(form.prenom,null, { 'attr': {'class': 'fldTitle'}}) }}
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.prenom) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    				
+			<div class ="fieldwrap">
+				{{ form_widget(form.prenom, { 'attr': {'class': 'large texttips'}} )}}
+			</div>
+		</li>
+		<li>
+			{{ form_label(form.societe,null, { 'attr': {'class': 'fldTitle'}}) }}
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.societe) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    				
+			<div class ="fieldwrap">
+				{{ form_widget(form.societe, { 'attr': {'class': 'large texttips'}} )}}
+			</div>
+		</li>
+		<li>
+			{{ form_label(form.email,null, { 'attr': {'class': 'fldTitle'}}) }}
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    		{{ form_errors(form.email) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    				
+			<div class ="fieldwrap">
+				{{ form_widget(form.email, { 'attr': {'class': 'large texttips'}} )}}
+			</div>
+		</li>
+		<li class="buttons bottom-round noboder">
+			<div class ="fieldwrap">
+				<input name="" type="submit" value="Submit" class="submit-button"><input name="" value="Clear Form" type="reset" class="submit-button">
+			</div>
+		</li>
+	</ul>
+
+	<!-- Les erreurs gŽnŽrales du formulaire. -->
+	{{ form_errors(form) }}
+						
+	 {{ form_rest(form) }}
+</form>

@@ -1,0 +1,32 @@
+{# src/JuniorDashboard/GestionAdminBundle/Resources/views/Admin/ajouter.html.twig #}
+
+{% extends "JuniorDashboardAdminBundle::layout.html.twig" %}
+
+{% block sidebar_list %}
+	<li><a href="{{ path('JuniorDashboardAdminBundle_homepage') }}"><span class="nav-icon dboard-icon"></span> Home </a></li>
+	<li><a href="{{ path('JuniorDashboardAdminBundle_indexUtilisateur') }}"><span class="nav-icon typo-icon"></span> Utilisateurs </a></li>
+	<li><a href="{{ path('JuniorDashboardAdminBundle_ajouterUtilisateur') }}" class="active"><span class="nav-icon typo-icon"></span> Nouvel utilisateur <span class="active-nidicator">&nbsp;</span></a></li>
+	
+	
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+	<div class="container_12">
+		<div class="widget-panel grid_12">
+			<div class="widget-top">
+				<h4>Ajouter un utilisateur</h4>
+			</div>
+			<div class="widget-content module">
+				<div class="form-grid">
+				
+				{% include "JuniorDashboardAdminBundle:Admin/Utilisateur/Form:ajouterUtilisateur.html.twig" %}					
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

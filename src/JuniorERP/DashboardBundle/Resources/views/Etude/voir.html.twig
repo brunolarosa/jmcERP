@@ -1,0 +1,32 @@
+{# src/JuniorDashboard/GestionEtudesBundle/Resources/views/Etudes/index.html.twig #}
+
+{% extends "JuniorERPDashboardBundle::layout.html.twig" %}
+
+{% block sidebar_list %}
+	<li><a href="{{ path('JuniorERPDashboardBundle_etude_index') }}"><span class="nav-icon dboard-icon"></span> Liste des etudes </a></li>
+	<li>
+		<a class="active" href="#">Lol</a>
+			<ul class="acitem" style="display: block;">
+				<li>Document</li>
+				<li></li>
+				<li></li>
+			</ul>
+	</li>
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+	<div class="container_12">
+	<div class="widget-panel grid_6">
+		<div class="widget-top">
+			<h4>Liste des clients</h4>
+		</div>
+		<div class="widget-content module">
+		{{ etude.intitule }}
+		</div>
+	</div>
+	</div>
+</div>
+
+{% endblock %}

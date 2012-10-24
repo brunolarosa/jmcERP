@@ -1,0 +1,137 @@
+<form method="post" {{ form_enctype(form) }} action="{{ path('JuniorERPDashboardBundle_etude_ajouter') }}" class="topLabel">
+						
+	<ul>
+		<li class="minLabel firstHalf">
+			<fieldset>
+				<legend>Informations principales</legend>
+				<ul>
+		
+					<li>
+						{{ form_label(form.intitule,'Intitule de l\'etude', { 'attr': {'class': 'fldTitle'}}) }}
+			
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.intitule) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    							
+						<div class ="fieldwrap">
+							{{ form_widget(form.intitule, { 'attr': {'class': 'large texttips'}} ) }}
+						</div>
+					</li>
+		
+					<li>
+						{{ form_label(form.objectif,'Objectif', { 'attr': {'class': 'fldTitle'}}) }}
+			
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.objectif) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    							
+						<div class ="fieldwrap">
+							{{ form_widget(form.objectif, { 'attr': {'class': 'large texttips'}} ) }}
+						</div>
+					</li>
+					<li>
+						{{ form_label(form.provenance,null, { 'attr': {'class': 'fldTitle'}}) }}
+			<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.provenance) }}
+
+    		<!-- GŽnŽration de l'input. -->
+    							
+						<div class ="fieldwrap">
+							{{ form_widget(form.provenance, {'attr': {'class': 'chzn-select full'}}) }}
+						</div>
+					</li>
+					<li>
+						{{ form_label(form.domaine, 'Domain d\'intervention', { 'attr': {'class': 'fldTitle'}}) }}
+			
+						<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.domaine) }}
+
+    					<!-- GŽnŽration de l'input. -->					
+						<div class ="fieldwrap">
+							{{ form_widget(form.domaine, {'attr': {'class': 'chzn-select full'}}) }}
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</li>
+		
+		<li>
+			<fieldset>
+				<legend>Commenditaires</legend>
+				<ul>
+					<li>
+						{{ form_label(form.client,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+						<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.client) }}
+
+    					<!-- GŽnŽration de l'input. -->			
+						<div class ="fieldwrap">
+							{{ form_widget(form.client, {'attr': {'class': 'chzn-select full'}}) }}
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</li>
+		<li>
+			<fieldset>
+				<legend>Suivi de l'etude</legend>
+				<ul>
+					<li>
+						{{ form_label(form.chefProjet,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+						<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.chefProjet) }}
+
+    					<!-- GŽnŽration de l'input. -->			
+						<div class ="fieldwrap">
+							{{ form_widget(form.chefProjet, {'attr': {'class': 'chzn-select full'}}) }}
+						</div>
+					</li>
+					<li>
+						{{ form_label(form.suiveurQualite,null, { 'attr': {'class': 'fldTitle'}}) }}
+			
+						<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.suiveurQualite) }}
+
+    					<!-- GŽnŽration de l'input. -->			
+						<div class ="fieldwrap">
+							{{ form_widget(form.suiveurQualite, {'attr': {'class': 'chzn-select full'}}) }}
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</li>
+		<li>
+			<fieldset>
+				<legend>Infomations generales</legend>
+				<ul>
+					<li>
+						{{ form_label(form.duree, 'Duree (en semaine)', { 'attr': {'class': 'fldTitle'}}) }}
+			
+						<!-- Affichage des erreurs pour ce champ prŽcis. -->
+    					{{ form_errors(form.duree) }}
+
+    					<!-- GŽnŽration de l'input. -->			
+						<div class ="fieldwrap">
+							{{ form_widget(form.duree)}}
+						</div>
+					</li>
+				</ul>
+			</fieldset>
+		</li>
+		<li class="buttons bottom-round noboder">
+			<div class ="fieldwrap">
+				<input name="" type="submit" value="Submit" class="submit-button"><input name="" value="Clear Form" type="reset" class="submit-button">
+			</div>
+			
+		</li>
+	</ul>
+
+	<!-- Les erreurs gŽnŽrales du formulaire. -->
+	{{ form_errors(form) }}
+						
+	 {{ form_rest(form) }}
+</form>

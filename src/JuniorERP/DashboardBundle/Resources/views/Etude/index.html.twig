@@ -1,0 +1,73 @@
+{# src/JuniorDashboard/GestionEtudesBundle/Resources/views/Etudes/index.html.twig #}
+
+{% extends "JuniorERPDashboardBundle::layout.html.twig" %}
+
+{% block sidebar_list %}
+	<li><a href="{{ path('JuniorERPDashboardBundle_etude_index') }}" class="active"><span class="nav-icon dboard-icon"></span> Liste des etudes <span class="active-nidicator">&nbsp;</span></a></li>
+	<li><a href="{{ path('JuniorERPDashboardBundle_etude_ajouter') }}"><span class="nav-icon typo-icon"></span> Creer une etude </a></li>
+{% endblock %}
+
+{% block content %}
+<div id="main-header" class="page-header">
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home"></i>JuniorERP
+			<span class="divider">&raquo;</span>
+		</li>
+        <li>
+        	<a href="#">Dashboard</a>
+        </li>
+	</ul>
+                             
+    <h1 id="main-heading">
+       	Dashboard <span>This is the place where everything started</span>
+    </h1>
+</div>
+                            
+<div id="main-content">
+	<div class="row-fluid">
+    	<div class="span12 widget">
+    		<div class="widget-header">
+    			<span class="title">Liste des clients</span>
+            </div>
+            <div class="widget-content table-container">
+            	<table id="demo-dtable-02" class="table table-striped">
+                	<thead>
+                    	<tr>
+                        	<th>Intitule</th>
+							<th>Client</th>
+							<th>Chargé d'affaire</th>
+							<th>Resp. Qualité</th>
+							<th>Etat</th>
+                        </tr>
+                	</thead>
+                    <tfoot>
+                    	<tr>
+                        	<td>Intitule</td>
+							<td>Client</td>
+							<td>Chargé d'affaire</td>
+							<td>Resp. Qualité</td>
+							<th>Etat</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for etude in etudes %}
+					
+						<tr>
+						
+							<td><a href="{{ path('JuniorERPDashboardBundle_etude_voir', { 'id': etude.getId() }) }}"><strong>{{ etude.intitule }}</strong></a></td>
+							<td>{{ etude.client.societe }}</td>
+							<td>{{ etude.chefProjet.username }}</td>
+							<td>{{ etude.suiveurQualite.username }}</td>
+							<td>En Cours</td>
+						</tr>
+					{% endfor %}
+                    </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

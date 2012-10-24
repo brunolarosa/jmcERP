@@ -1,0 +1,28 @@
+{# src/JuniorDashboard/ClientsBundle/Resources/views/Clients/ajouter.html.twig #}
+
+{% extends "JuniorERPDashboardBundle::layout.html.twig" %}
+
+
+{% block sidebar_list %}
+	<li><a href="{{ path('JuniorERPDashboardBundle_client_index') }}"><span class="nav-icon dboard-icon"></span> Liste des Clients </a></li>
+	<li><a href="{{ path('JuniorERPDashboardBundle_client_ajouter') }}" class="active"><span class="nav-icon typo-icon"></span> Ajouter un Client <span class="active-nidicator">&nbsp;</span></a></li>
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+	<div class="container_12">
+		<div class="widget-panel grid_12">
+			<div class="widget-top">
+				<h4>Ajouter un client</h4>
+			</div>
+			<div class="widget-content module">
+				<div class="form-grid">
+					{% include "JuniorERPDashboardBundle:Client/Form:ajouterForm.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
